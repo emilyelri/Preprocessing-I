@@ -1,1 +1,393 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Variables */
+/* Mix Ins*/
+.flexCentered {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.debug-border {
+  border: 2px solid green;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html {
+  background-image: linear-gradient(to bottom right, #ffdeda, coral);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  font-family: 'Lexend Exa', sans-serif;
+}
+html body {
+  height: vh;
+  width: 60%;
+  margin-left: 20%;
+  background-color: white;
+  font-size: 10px;
+}
+@media screen and (max-width: 500px) {
+  html body {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+html body .topbar {
+  text-decoration: none;
+  width: 60%;
+  margin-top: 0px;
+  background-color: #ffdcd8;
+  position: fixed;
+  z-index: 101;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+html body .topbar:hover {
+  color: white;
+}
+@media screen and (max-width: 500px) {
+  html body .topbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+  }
+}
+html body .topbar .resume {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: black;
+  padding: 20px;
+}
+html body .topbar .resume:hover {
+  color: white;
+}
+html body .topbar nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media screen and (max-width: 500px) {
+  html body .topbar nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+html body .topbar nav a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: black;
+  padding: 20px;
+}
+html body .topbar nav a:hover {
+  color: white;
+}
+@media screen and (max-width: 500px) {
+  html body .topbar nav a {
+    display: flex;
+    flex-direction: column;
+  }
+}
+html body .banner {
+  width: 100%;
+  padding: 40px auto;
+  height: auto;
+}
+html body .titlebar {
+  padding: 80px 50px;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (max-width: 500px) {
+  html body .titlebar {
+    flex-direction: column;
+  }
+}
+html body .titlebar .name {
+  width: 45%;
+}
+@media screen and (max-width: 500px) {
+  html body .titlebar .name {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+html body .titlebar .name h1 {
+  font-size: 6rem;
+  padding: 15px;
+  color: #8d9694;
+}
+@media screen and (max-width: 500px) {
+  html body .titlebar .name h1 {
+    font-size: 4rem;
+  }
+}
+html body .titlebar .name h3 {
+  font-size: 35px;
+}
+html body .titlebar .aboutme {
+  align-self: baseline;
+  width: 45%;
+}
+@media screen and (max-width: 500px) {
+  html body .titlebar .aboutme {
+    width: 100%;
+  }
+}
+html body .titlebar .aboutme h3 {
+  color: #8d9694;
+  font-size: 45px;
+  padding: 15px;
+}
+html body .titlebar .aboutme p {
+  font-size: 16px;
+  line-height: 25px;
+}
+html body .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+@media screen and (max-width: 500px) {
+  html body .bottom {
+    flex-direction: column;
+  }
+}
+html body .bottom .workandskills {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+@media screen and (max-width: 500px) {
+  html body .bottom .workandskills {
+    flex-direction: column;
+  }
+}
+html body .bottom .workandskills .work-history {
+  margin: 20px 35px;
+  width: 75%;
+}
+@media screen and (max-width: 500px) {
+  html body .bottom .workandskills .work-history {
+    width: 100%;
+  }
+}
+html body .bottom .workandskills .work-history h3 {
+  padding: 10px 0 15px 20px;
+  font-size: 35px;
+  color: #8d9694;
+}
+html body .bottom .workandskills .work-history ul li {
+  font-size: 14px;
+  padding: 1% 5%;
+}
+html body .bottom .skills {
+  margin: 20px 60px;
+  width: 30%;
+}
+@media screen and (max-width: 500px) {
+  html body .bottom .skills {
+    width: 100%;
+  }
+}
+html body .bottom .skills h3 {
+  padding: 25px 0 15px 20px;
+  font-size: 35px;
+  color: #8d9694;
+}
+html body .bottom .skills ul {
+  list-style-type: square;
+  list-style-position: inside;
+}
+html body .bottom .skills ul li {
+  font-size: 14px;
+  padding: 1% 5%;
+}
+html body .mybuttons {
+  background-size: 100%;
+  background-image: linear-gradient(to bottom right, white, #ffdcd8);
+  border-radius: 0.45rem;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  color: #8d9694;
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 10px 30px;
+  margin: 40px auto;
+  position: relative;
+  z-index: 100;
+  transition: all 0.2s ease-in-out;
+}
+html body .mybuttons:before {
+  border-radius: inherit;
+  background-image: linear-gradient(to bottom right, #ffdcd8, white);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: -100;
+  transition: opacity 0.45s;
+  transition: all 0.2s ease-in-out;
+}
+html body .mybuttons:hover {
+  color: #ffae94;
+  transform: scale(1.05);
+}
+html body .mybuttons:hover:before {
+  opacity: 1;
+}
+html body footer {
+  width: 100%;
+  height: 50px;
+  background: #ffdcd8;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+html body footer p {
+  margin: -3px auto 25px;
+}
